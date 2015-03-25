@@ -1,0 +1,7 @@
+XTerm*Foreground:	Grey
+XTerm*background:	black
+XTerm*faceName: Liberation Mono
+XTerm*faceNameDoublesize: Droid Sans Japanese
+XTerm*faceSize: 10
+XTerm*locale: true
+XTerm*utf8: 1

@@ -1,0 +1,7 @@
+[user]
+	email = kacper.b.zuk@gmail.com
+	name = Kacper Żuk
+[push]
+	default = simple
+[color]
+	ui = auto
