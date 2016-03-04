@@ -13,12 +13,11 @@ if status --is-interactive
         end
         exec tmux -u
     end
+    keychain --agents gpg,ssh --confhost --confirm -Q --eval | source
 end
 
 set -x ABSROOT /home/kaz/PKGBUILDs
-set -x PATH ~/bin (find ~/Qt/Tools -type d -name bin) /home/kaz/.gem/ruby/2.2.0/bin $PATH /home/kaz/Android/android-sdk-linux/tools /home/kaz/Android/android-sdk-linux/platform-tools /home/kaz/Android/android-ndk-r10d/ ~/npm/bin ~/.cabal/bin ~/.composer/vendor/bin ./
+set -x PATH ~/bin (find ~/Qt/Tools -type d -name bin) /home/kaz/.gem/ruby/2.2.0/bin $PATH /home/kaz/Android/android-sdk-linux/tools /home/kaz/Android/android-sdk-linux/platform-tools /home/kaz/Android/android-ndk-r10d/ ~/npm/bin ~/.cabal/bin ~/.composer/vendor/bin
 set -x OPENCV_PATH ~/Android/OpenCV
 set -x EDITOR vim
-set -x ANSIBLE_HOSTS ~/Programowanie/faucetbox.com/ansible/ansible_hosts
-
 set fish_greeting

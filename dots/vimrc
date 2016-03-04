@@ -37,3 +37,5 @@ set foldcolumn=1
 set hidden
 set wildmenu
 set cmdheight=2
+set nowritebackup
+execute pathogen#infect()
