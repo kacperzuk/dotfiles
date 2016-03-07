@@ -2,11 +2,8 @@
 
 OLD=$HOME/dotfiles_old
 
-if [[ -n "$(dirname $0)" ]]; then
-    cd "$(dirname $0)"
-fi
 
-cd dots
+pushd dots >/dev/null
 
 for file in $(find . -type f | sed "s|^\./||"); do
     if [ -e "$HOME/.$file" -o -L "$HOME/.$file" ]; then
@@ -18,3 +15,5 @@ for file in $(find . -type f | sed "s|^\./||"); do
     mkdir -p "$(dirname $HOME/.$file)"
     ln -s "$(pwd)/$file" "$HOME/.$file"
 done
+
+popd >/dev/null
