@@ -7,7 +7,7 @@ if [[ -n "$(dirname $0)" ]]; then
 fi
 
 pushd generic >/dev/null
-. setup.sh
+source ./setup.sh
 popd >/dev/null
 
 [[ -f /etc/arch-release ]] && exec arch/setup.sh $@
