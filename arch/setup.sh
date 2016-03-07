@@ -31,6 +31,7 @@ if [[ "$1" == "--full" ]]; then
         firefox \
         gimp \
         gparted \
+        gsimplecal \
         haveged \
         hplip \
         i3-wm \

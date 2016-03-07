@@ -19,4 +19,4 @@ done
 
 popd >/dev/null
 
-cp -r externals/nvm-wrapper "$HOME/.config/fish/"
+git clone git://github.com/passcod/nvm-fish-wrapper.git "$HOME/.config/fish/"
