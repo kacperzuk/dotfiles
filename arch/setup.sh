@@ -101,4 +101,6 @@ if [[ "$1" == "--full" ]]; then
         tor-browser-en \
         lightdm-webkit2-greeter \
         octave-communications octave-image octave-signal octave-statistics
+
+    echo Run \"sudo systemctl start lightdm\" to begin.
 fi
