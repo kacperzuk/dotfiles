@@ -2,7 +2,7 @@
 
 set -e
 
-sudo pacman -Syu --noconfirm \
+sudo pacman -Syu --noconfirm --needed \
     fish \
     git \
     gvim \
@@ -16,7 +16,7 @@ sudo pacman -Syu --noconfirm \
 chsh -s /usr/bin/fish
 
 if [[ "$1" == "--full" ]]; then
-    sudo pacman -S --noconfirm \
+    sudo pacman -S --noconfirm --needed \
         abs \
         ansible \
         archlinux-wallpaper \
@@ -84,16 +84,18 @@ if [[ "$1" == "--full" ]]; then
     sed -i "/greeter-session=/c\greeter-session=lightdm-webkit2-greeter" /etc/lightdm/lightdm.conf
 
 
-    DIR=`mktemp -d`
-    pushd "$DIR" >/dev/null
-    wget https://aur.archlinux.org/cgit/aur.git/snapshot/aura-bin.tar.gz
-    tar xf aura-bin.tar.gz
-    cd aura-bin
-    makepkg -si --noconfirm
-    popd
-    rm -rf "$DIR"
+    if ! hash aura &>/dev/null; then
+        DIR=`mktemp -d`
+        pushd "$DIR" >/dev/null
+        wget https://aur.archlinux.org/cgit/aur.git/snapshot/aura-bin.tar.gz
+        tar xf aura-bin.tar.gz
+        cd aura-bin
+        makepkg -si --noconfirm
+        popd
+        rm -rf "$DIR"
+    fi
 
-    sudo aura -A \
+    sudo aura -A --needed \
         dropbox dropbox-cli \
         napi-bash \
         openxenmanager-git \

@@ -1,4 +1,4 @@
-order += "ipv6"
+order += "volume pulse"
 order += "disk /"
 order += "disk /home"
 order += "disk /home/kaz/.password-store"
@@ -9,6 +9,14 @@ order += "cpu_temperature 0"
 order += "load"
 order += "tztime local"
 order += "tztime utc"
+
+volume pulse {
+    format = "♪: %volume"
+    format_muted = "♪: %volume(M)"
+    device = "default"
+    mixer = "pulse"
+    mixer_idx = 0
+}
 
 wireless _first_ {
         format_up = "W: (%essid) %ip"
