@@ -2,6 +2,7 @@
 
 OLD=$HOME/dotfiles_old
 
+set -e
 
 pushd dots >/dev/null
 
