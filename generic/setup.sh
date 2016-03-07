@@ -18,3 +18,5 @@ for file in $(find . -type f | sed "s|^\./||"); do
 done
 
 popd >/dev/null
+
+cp -r externals/nvm-wrapper "$HOME/.config/fish/"
