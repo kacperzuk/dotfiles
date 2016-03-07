@@ -1,7 +1,6 @@
 #!/bin/bash
 
-if hash git &>/dev/null; then
-else
+if ! hash git &>/dev/null; then
     hash pacman &>/dev/null && sudo pacman -Sy git --noconfirm
     hash apt-get &>/dev/null
         && sudo apt-get update
