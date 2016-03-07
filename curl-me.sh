@@ -6,7 +6,7 @@ if ! hash git &>/dev/null; then
 
     hash apt-get &>/dev/null \
         && sudo apt-get update \
-        && sudo apt-get install git -y \
+        && sudo apt-get install git -y
 fi
 
 cd $HOME
