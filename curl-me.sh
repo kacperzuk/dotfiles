@@ -10,8 +10,11 @@ if ! hash git &>/dev/null; then
 fi
 
 cd $HOME
-git clone https://bitbucket.org/Kazuldur/dotfiles.git
+[[ ! -e dotfiles ]] && \
+    git clone https://bitbucket.org/Kazuldur/dotfiles.git
+
 cd dotfiles
+git pull
 if [[ -n "$FULL_SETUP" ]]; then
     ./setup.sh --full
 else
