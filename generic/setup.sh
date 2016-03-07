@@ -19,4 +19,6 @@ done
 
 popd >/dev/null
 
-git clone git://github.com/passcod/nvm-fish-wrapper.git "$HOME/.config/fish/"
+if [[ ! -e "$HOME/.config/fish/nvm-fish-wrapper" ]]; then
+    git clone git://github.com/passcod/nvm-fish-wrapper.git "$HOME/.config/fish/nvm-fish-wrapper"
+fi
