@@ -10,11 +10,13 @@ if ! hash git &>/dev/null; then
 fi
 
 cd $HOME
-[[ ! -e dotfiles ]] && \
-    git clone https://bitbucket.org/Kazuldur/dotfiles.git
 
+# todo: check if exists and ask user
+rm -rf dotfiles
+git clone https://bitbucket.org/Kazuldur/dotfiles.git
 cd dotfiles
-git pull
+
+# todo: ask if full
 if [[ -n "$FULL_SETUP" ]]; then
     ./setup.sh --full
 else
