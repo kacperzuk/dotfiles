@@ -13,7 +13,7 @@ sudo pacman -Syu --noconfirm --needed \
     tmux \
     xterm
 
-chsh -s /usr/bin/fish
+sudo chsh -s /usr/bin/fish $USER
 
 if [[ "$1" == "--full" ]]; then
     sudo pacman -S --noconfirm --needed \
