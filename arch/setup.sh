@@ -19,6 +19,7 @@ if [[ "$1" == "--full" ]]; then
     sudo pacman -S --noconfirm --needed \
         abs \
         ansible \
+        apvlv \
         archlinux-wallpaper \
         base-devel \
         chromium \
@@ -27,7 +28,6 @@ if [[ "$1" == "--full" ]]; then
         cups \
         cups-pdf \
         dosfstools \
-        evince \
         firefox \
         gimp \
         gparted \
