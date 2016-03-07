@@ -43,7 +43,7 @@ if [[ "$1" == "--full" ]]; then
         l3afpad \
         libreoffice-fresh libreoffice-fresh-pl \
         lightdm \
-        light-lock \
+        light-locker \
         logrotate \
         mariadb \
         mongodb mongodb-tools \
@@ -52,13 +52,13 @@ if [[ "$1" == "--full" ]]; then
         networkmanager nm-connection-editor networkmanager-openvpn network-manager-applet \
         nmap \
         ntfs-3g \
-        octave octave-communications octave-image octave-signal octave-statistics \
+        octave \
         openbsd-netcat \
         openssh \
         owncloud-client \
         pam_mount \
         pass \
-        php php-apache php-composer php-gd php-mcrypt php-memcached php-mongo php-pear php-pgsql php-sqlite \
+        php php-apache php-composer php-gd php-mcrypt php-memcached php-mongodb php-pgsql php-sqlite \
         postfix \
         postgresql \
         pv \
@@ -69,8 +69,7 @@ if [[ "$1" == "--full" ]]; then
         rofi \
         simple-scan \
         smplayer \
-        steam \
-        tor tor-browser-en torsocks \
+        tor torsocks \
         transmission-gtk \
         virtualbox virtualbox-host-dkms virtualbox-guest-iso \
         vlc \
@@ -99,5 +98,7 @@ if [[ "$1" == "--full" ]]; then
         dropbox dropbox-cli \
         napi-bash \
         openxenmanager-git \
-        lightdm-webkit2-greeter
+        tor-browser-en \
+        lightdm-webkit2-greeter \
+        octave-communications octave-image octave-signal octave-statistics
 fi
