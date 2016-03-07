@@ -22,7 +22,6 @@ if [[ "$1" == "--full" ]]; then
         cryptsetup \
         cups \
         cups-pdf \
-        dmenu \
         dosfstools \
         evince \
         firefox \
@@ -60,8 +59,10 @@ if [[ "$1" == "--full" ]]; then
         postgresql \
         pv \
         python2-scikit-learn \
+        pulseaudio-bluetooth \
         redshift \
         reflector \
+        rofi \
         simple-scan \
         smplayer \
         steam \
