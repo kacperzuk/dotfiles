@@ -35,6 +35,7 @@ if [[ "$1" == "--full" ]]; then
         haveged \
         hplip \
         i3-wm \
+        i3lock \
         i3status \
         inkscape \
         intel-ucode \
@@ -44,7 +45,6 @@ if [[ "$1" == "--full" ]]; then
         l3afpad \
         libreoffice-fresh libreoffice-fresh-pl \
         lightdm \
-        light-locker \
         logrotate \
         mariadb \
         mongodb mongodb-tools \
@@ -76,12 +76,13 @@ if [[ "$1" == "--full" ]]; then
         vlc \
         whois \
         wireshark-cli wireshark-gtk tcpdump \
+        xautolock \
         xclip \
         xorg xorg-drivers xorg-apps xorg-fonts
 
     sudo reflector --verbose -l 5 --sort rate --save /etc/pacman.d/mirrorlist
     sudo systemctl enable lightdm
-    sed -i "/greeter-session=/c\greeter-session=lightdm-webkit2-greeter" /etc/lightdm/lightdm.conf
+    sed -i "/greeter-session=/c\\greeter-session=lightdm-webkit2-greeter" /etc/lightdm/lightdm.conf
 
 
     if ! hash aura &>/dev/null; then
@@ -101,7 +102,10 @@ if [[ "$1" == "--full" ]]; then
         openxenmanager-git \
         tor-browser-en \
         lightdm-webkit2-greeter \
+        lightdm-webkit-theme-material-git \
         octave-communications octave-image octave-signal octave-statistics
+
+    sed -i "/webkit-theme=/c\\webkit-theme=material" /etc/lightdm/lightdm-webkit2-greeter.conf
 
     echo Run \"sudo systemctl start lightdm\" to begin.
 fi
