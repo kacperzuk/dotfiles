@@ -30,6 +30,7 @@ if [[ "$1" == "--full" ]]; then
         dosfstools \
         firefox \
         gimp \
+        gnome-keyring \
         gparted \
         gsimplecal \
         haveged \
@@ -62,9 +63,9 @@ if [[ "$1" == "--full" ]]; then
         php php-apache php-composer php-gd php-mcrypt php-memcached php-mongodb php-pgsql php-sqlite \
         postfix \
         postgresql \
+        pulseaudio-bluetooth \
         pv \
         python2-scikit-learn \
-        pulseaudio-bluetooth \
         redshift \
         reflector \
         rofi \
