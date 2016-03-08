@@ -21,3 +21,5 @@ set -x PATH ~/bin (find ~/Qt/Tools -type d -name bin) /home/kaz/.gem/ruby/2.2.0/
 set -x OPENCV_PATH ~/Android/OpenCV
 set -x EDITOR vim
 set fish_greeting
+
+alias vim='nvim'
