@@ -25,5 +25,5 @@ fi
 if [[ ! -e "$HOME/.local/share/fonts/Literation Mono Powerline.ttf" ]]; then
     mkdir -p "$HOME/.local/share/fonts/"
     curl -L https://github.com/powerline/fonts/raw/master/LiberationMono/Literation%20Mono%20Powerline.ttf -o "$HOME/.local/share/fonts/Literation Mono Powerline.ttf"
-    fc-cache -f "$HOME/.local/share/fonts/"
+    fc-cache -f "$HOME/.local/share/fonts/" &>/dev/null || true
 fi
