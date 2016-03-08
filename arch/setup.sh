@@ -5,7 +5,7 @@ set -e
 sudo pacman -Syu --noconfirm --needed \
     fish \
     git \
-    gvim \
+    neovim \
     httpie \
     meld \
     nodejs npm \
@@ -106,6 +106,9 @@ if [[ "$1" == "--full" ]]; then
         octave-communications octave-image octave-signal octave-statistics
 
     sed -i "/webkit-theme=/c\\webkit-theme=material" /etc/lightdm/lightdm-webkit2-greeter.conf
+
+    sudo cp i3lock@.service /etc/systemd/system/i3lock@.service
+    sudo systemctl enable i3lock@$USER
 
     echo Run \"sudo systemctl start lightdm\" to begin.
 fi
