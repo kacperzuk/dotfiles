@@ -22,3 +22,7 @@ popd >/dev/null
 if [[ ! -e "$HOME/.config/fish/nvm-fish-wrapper" ]]; then
     git clone git://github.com/passcod/nvm-fish-wrapper.git "$HOME/.config/fish/nvm-fish-wrapper"
 fi
+if [[ ! -e "$HOME/.local/share/fonts/Literation Mono Powerline.ttf" ]]; then
+    curl -fLo "$HOME/.local/share/fonts/Literation Mono Powerline.ttf" https://github.com/powerline/fonts/raw/master/LiberationMono/Literation%20Mono%20Powerline.ttf
+    fc-cache -f "$HOME/.local/share/fonts/"
+fi

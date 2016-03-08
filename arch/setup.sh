@@ -9,6 +9,7 @@ sudo pacman -Syu --noconfirm --needed \
     httpie \
     meld \
     nodejs npm \
+    powerline-fonts \
     sshuttle \
     tmux \
     xterm

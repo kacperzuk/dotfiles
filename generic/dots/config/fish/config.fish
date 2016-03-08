@@ -8,10 +8,10 @@ if status --is-interactive
             if [ -n "$SESS_ID" ]
                 echo asd
                 echo $SESS_ID
-                exec tmux -u attach-session -t $SESS_ID
+                exec tmux -2 -u attach-session -t $SESS_ID
             end
         end
-        exec tmux -u
+        exec tmux -2 -u
     end
     keychain --agents gpg,ssh --confhost --confirm -Q --eval | source
 end
