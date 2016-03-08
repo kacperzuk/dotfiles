@@ -24,6 +24,6 @@ if [[ ! -e "$HOME/.config/fish/nvm-fish-wrapper" ]]; then
 fi
 if [[ ! -e "$HOME/.local/share/fonts/Literation Mono Powerline.ttf" ]]; then
     mkdir -p "$HOME/.local/share/fonts/"
-    wget https://github.com/powerline/fonts/raw/master/LiberationMono/Literation%20Mono%20Powerline.ttf -O "$HOME/.local/share/fonts/Literation Mono Powerline.ttf"
+    curl -L https://github.com/powerline/fonts/raw/master/LiberationMono/Literation%20Mono%20Powerline.ttf -o "$HOME/.local/share/fonts/Literation Mono Powerline.ttf"
     fc-cache -f "$HOME/.local/share/fonts/"
 fi
