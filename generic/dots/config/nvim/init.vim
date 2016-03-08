@@ -11,6 +11,7 @@ if !empty(globpath(&rtp, 'autoload/plug.vim'))
     Plug('vim-airline/vim-airline-themes')
     Plug('airblade/vim-gitgutter')
     Plug('noah/fu')
+    Plug('tpope/vim-fugitive')
     call plug#end()
 endif
 
