@@ -12,6 +12,7 @@ sudo apt install -y \
     git \
     httpie \
     neovim \
+    nethack-console \
     tmux \
     xterm
 
@@ -26,3 +27,4 @@ xrdb ~/.Xresources || true
 nvim +PlugInstall +qall
 
 bash -c "xterm fish &"
+killall gnome-terminal
