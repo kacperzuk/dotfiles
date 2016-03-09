@@ -22,6 +22,6 @@ sudo update-alternatives --config vim
 sudo update-alternatives --install /usr/bin/editor editor /usr/bin/nvim 60
 sudo update-alternatives --config editor
 
-chsh -s /usr/bin/fish
+sudo chsh -s /usr/bin/fish $USER
 
 echo "Open xterm to begin"
