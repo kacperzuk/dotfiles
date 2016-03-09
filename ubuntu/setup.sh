@@ -22,7 +22,7 @@ sudo update-alternatives --install /usr/bin/editor editor /usr/bin/nvim 60
 
 sudo chsh -s /usr/bin/fish $USER
 
-xrdb ~/.Xresources || true
+xrdb ~/.Xresources
 
 tmux new -d nethack
 xterm -e nvim +PlugInstall +qall
