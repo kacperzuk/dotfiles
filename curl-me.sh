@@ -23,7 +23,7 @@ fi
 
 if [[ "$OVERWRITE_DOTFILES" != "n" ]]; then
     rm -rf dotfiles
-    git clone https://bitbucket.org/Kazuldur/dotfiles.git >/dev/null
+    git clone -q https://bitbucket.org/Kazuldur/dotfiles.git
 fi
 
 cd dotfiles
