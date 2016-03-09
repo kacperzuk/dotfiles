@@ -26,5 +26,6 @@ xrdb ~/.Xresources || true
 
 nvim +PlugInstall +qall
 
+tmux new nethack
 bash -c "xterm fish &"
-killall gnome-terminal
+killall gnome-terminal-server
