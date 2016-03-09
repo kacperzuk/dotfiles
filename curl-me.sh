@@ -11,13 +11,22 @@ fi
 
 cd $HOME
 
-# todo: check if exists and ask user
-rm -rf dotfiles
-git clone https://bitbucket.org/Kazuldur/dotfiles.git
+if [[ -e dotfiles ]]; then
+    if [[ -z "$OVERWRITE_DOTFILES" ]]; then
+        read -p "~/dotfiles already exists. Should it be removed and cloned again? [Y/n]" OVERWRITE_DOTFILES </dev/tty
+    fi
+    if [[ "$OVERWRITE_DOTFILES" != "n" ]]; then
+        rm -rf dotfiles
+        git clone https://bitbucket.org/Kazuldur/dotfiles.git
+    fi
+fi
 cd dotfiles
 
-# todo: ask if full
-if [[ -n "$FULL_SETUP" ]]; then
+if [[ -z "$FULL_SETUP" ]]; then
+    read -p "Full setup? [y/N]" result </dev/tty
+fi
+
+if [[ "$FULL_SETUP" == "y" ]]; then
     ./setup.sh --full
 else
     ./setup.sh
