@@ -85,7 +85,7 @@ if [[ "$1" == "--full" ]]; then
         xorg xorg-drivers xorg-apps xorg-fonts
 
     sudo systemctl enable lightdm
-    sed -i "/greeter-session=/c\\greeter-session=lightdm-webkit2-greeter" /etc/lightdm/lightdm.conf
+    sudo sed -i "/greeter-session=/c\\greeter-session=lightdm-webkit2-greeter" /etc/lightdm/lightdm.conf
 
 
     if ! hash aura &>/dev/null; then
