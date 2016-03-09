@@ -23,4 +23,6 @@ sudo chsh -s /usr/bin/fish $USER
 
 xrdb ~/.Xresources || true
 
+nvim +PlugInstall +qall
+
 bash -c "xterm fish &"

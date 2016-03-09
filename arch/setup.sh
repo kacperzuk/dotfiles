@@ -126,5 +126,6 @@ if [[ "$1" == "--full" ]]; then
     sudo cp i3lock@.service /etc/systemd/system/i3lock@.service
     sudo systemctl enable i3lock@$USER
 
+    nvim +PlugInstall +qall
     echo Run \"sudo systemctl start lightdm\" to begin.
 fi
