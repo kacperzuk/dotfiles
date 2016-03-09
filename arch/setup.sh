@@ -88,16 +88,18 @@ if [[ "$1" == "--full" ]]; then
     sudo sed -i "/greeter-session=/c\\greeter-session=lightdm-webkit2-greeter" /etc/lightdm/lightdm.conf
 
 
-    if ! hash pacaur &>/dev/null; then
-        DIR=`mktemp -d`
-        pushd "$DIR" >/dev/null
-        wget https://aur.archlinux.org/cgit/aur.git/snapshot/pacaur.tar.gz
-        tar xf pacaur.tar.gz
-        cd pacaur
-        makepkg -si --noconfirm
-        popd
-        rm -rf "$DIR"
-    fi
+    for package in cower pacaur; do
+        if ! hash $package &>/dev/null; then
+            DIR=`mktemp -d`
+            pushd "$DIR" >/dev/null
+            wget https://aur.archlinux.org/cgit/aur.git/snapshot/${package}.tar.gz
+            tar xf ${package}.tar.gz
+            cd $package
+            makepkg -si --noconfirm
+            popd
+            rm -rf "$DIR"
+        fi
+    done
 
     sudo pacaur -aS --needed \
         dropbox dropbox-cli \
