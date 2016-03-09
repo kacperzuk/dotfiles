@@ -23,4 +23,4 @@ sudo chsh -s /usr/bin/fish $USER
 
 xrdb ~/.Xresources || true
 
-bash -c "xterm fish &""
+bash -c "xterm fish &"
