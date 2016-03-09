@@ -2,8 +2,11 @@
 
 set -e
 
-sudo apt-get update
-sudo apt-get install -y \
+sudo apt-add-repository multiverse
+sudo apt-add-repository universe
+sudo apt update
+
+sudo apt install -y \
     fish \
     git \
     gvim \
