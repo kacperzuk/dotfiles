@@ -161,7 +161,7 @@ focus_follows_mouse no
 hide_edge_borders both
 
 bindsym $mod+z exec i3lock -d -i /usr/share/archlinux/wallpaper/archlinux-simplyblack.png
-bindsym XF86AudioRaiseVolume exec ponymix increase 5
+bindsym XF86AudioRaiseVolume exec ponymix increase 5 --max-volume 130
 bindsym XF86AudioLowerVolume exec ponymix decrease 5
 bindsym XF86AudioMute exec ponymix toggle
 bindsym XF86MonBrightnessUp exec xbacklight +10
