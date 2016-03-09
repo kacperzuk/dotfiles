@@ -2,7 +2,6 @@
 
 set -e
 
-sudo apt install software-properties-common
 sudo apt-add-repository multiverse
 sudo apt-add-repository universe
 sudo apt-add-repository ppa:neovim-ppa/unstable
