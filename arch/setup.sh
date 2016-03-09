@@ -98,7 +98,7 @@ if [[ "$1" == "--full" ]]; then
         lightdm-webkit-theme-material-git \
         octave-communications octave-image octave-signal octave-statistics;
     do
-        if ! hash $package &>/dev/null; then
+        if ! pacman -Q $package &>/dev/null; then
             DIR=`mktemp -d`
             pushd "$DIR" >/dev/null
             wget https://aur.archlinux.org/cgit/aur.git/snapshot/${package}.tar.gz
