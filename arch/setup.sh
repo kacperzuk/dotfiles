@@ -88,6 +88,12 @@ if [[ "$1" == "--full" ]]; then
     sudo sed -i "/greeter-session=/c\\greeter-session=lightdm-webkit2-greeter" /etc/lightdm/lightdm.conf
 
 
+    local keys=""
+    keys="$keys 2E1AC68ED40814E0" # tor-browser-en
+    for key in $keys; do
+        gpg --keyserver hkp://pgp.mit.edu --recv-keys $key
+    done
+
     for package in \
         aura-bin \
         dropbox dropbox-cli \
@@ -96,7 +102,7 @@ if [[ "$1" == "--full" ]]; then
         tor-browser-en \
         lightdm-webkit2-greeter \
         lightdm-webkit-theme-material-git \
-        octave-communications octave-image octave-signal octave-statistics;
+        octave-communications octave-image octave-signal octave-statistics
     do
         if ! pacman -Q $package &>/dev/null; then
             DIR=`mktemp -d`
