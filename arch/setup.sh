@@ -88,7 +88,7 @@ if [[ "$1" == "--full" ]]; then
     sudo sed -i "/greeter-session=/c\\greeter-session=lightdm-webkit2-greeter" /etc/lightdm/lightdm.conf
 
 
-    local keys=""
+    keys=""
     keys="$keys 2E1AC68ED40814E0" # tor-browser-en
     for key in $keys; do
         gpg --keyserver hkp://pgp.mit.edu --recv-keys $key
