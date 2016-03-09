@@ -2,6 +2,10 @@
 
 set -e
 
+if [[ -n "$(dirname $0)" ]]; then
+    cd "$(dirname $0)"
+fi
+
 sudo pacman -Syu --noconfirm --needed \
     fish \
     git \
