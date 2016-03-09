@@ -21,4 +21,6 @@ sudo update-alternatives --install /usr/bin/editor editor /usr/bin/nvim 60
 
 sudo chsh -s /usr/bin/fish $USER
 
-echo "Open xterm to begin"
+xrdb ~/.Xresources || true
+
+bash -c "xterm fish &""
