@@ -24,9 +24,6 @@ sudo chsh -s /usr/bin/fish $USER
 
 xrdb ~/.Xresources
 
-echo "Tmux with nethack"
 tmux new -d nethack
-echo "Xterm with nvim plugins"
-xterm -e nvim +PlugInstall
-echo "Double-fork xterm with fish"
+xterm -e 'echo "Close this term after installation finishes" | nvim - +PlugInstall'
 bash -c "xterm fish &"
