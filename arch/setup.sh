@@ -88,18 +88,18 @@ if [[ "$1" == "--full" ]]; then
     sudo sed -i "/greeter-session=/c\\greeter-session=lightdm-webkit2-greeter" /etc/lightdm/lightdm.conf
 
 
-    if ! hash aura &>/dev/null; then
+    if ! hash pacaur &>/dev/null; then
         DIR=`mktemp -d`
         pushd "$DIR" >/dev/null
-        wget https://aur.archlinux.org/cgit/aur.git/snapshot/aura-bin.tar.gz
-        tar xf aura-bin.tar.gz
-        cd aura-bin
+        wget https://aur.archlinux.org/cgit/aur.git/snapshot/pacaur.tar.gz
+        tar xf pacaur.tar.gz
+        cd pacaur
         makepkg -si --noconfirm
         popd
         rm -rf "$DIR"
     fi
 
-    sudo aura -A --needed \
+    sudo pacaur -aS --needed \
         dropbox dropbox-cli \
         napi-bash \
         openxenmanager-git \
