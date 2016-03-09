@@ -13,7 +13,6 @@ if status --is-interactive
         end
         exec tmux -2 -u
     end
-    keychain --agents gpg,ssh --confhost --confirm -Q --eval | source
 end
 
 set -x ABSROOT /home/kaz/PKGBUILDs

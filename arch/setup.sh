@@ -16,6 +16,9 @@ sudo pacman -Syu --noconfirm --needed \
 sudo chsh -s /usr/bin/fish $USER
 
 if [[ "$1" == "--full" ]]; then
+    sudo pacman -S reflector rsync --noconfirm --needed
+    sudo reflector --verbose -l 5 --sort rate --save /etc/pacman.d/mirrorlist
+
     sudo pacman -S --noconfirm --needed \
         abs \
         ansible \
@@ -67,7 +70,6 @@ if [[ "$1" == "--full" ]]; then
         pv \
         python2-scikit-learn \
         redshift \
-        reflector \
         rofi \
         simple-scan \
         smplayer \
@@ -81,7 +83,6 @@ if [[ "$1" == "--full" ]]; then
         xclip \
         xorg xorg-drivers xorg-apps xorg-fonts
 
-    sudo reflector --verbose -l 5 --sort rate --save /etc/pacman.d/mirrorlist
     sudo systemctl enable lightdm
     sed -i "/greeter-session=/c\\greeter-session=lightdm-webkit2-greeter" /etc/lightdm/lightdm.conf
 
