@@ -102,7 +102,7 @@ if [[ "$1" == "--full" ]]; then
         tor-browser-en \
         lightdm-webkit2-greeter \
         lightdm-webkit-theme-material-git \
-        octave-control octave-signal octave-communications octave-image octave-statistics
+        octave-control octave-signal octave-communications octave-image octave-io octave-statistics
     do
         if ! pacman -Q $package &>/dev/null; then
             DIR=`mktemp -d`
