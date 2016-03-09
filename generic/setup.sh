@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 OLD=$HOME/dotfiles_old
 
