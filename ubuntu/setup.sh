@@ -24,8 +24,7 @@ sudo chsh -s /usr/bin/fish $USER
 
 xrdb ~/.Xresources || true
 
-nvim +PlugInstall +qall
-
 tmux new nethack
+xterm -e nvim +PlugInstall +qall
 bash -c "xterm fish &"
 killall gnome-terminal-server
