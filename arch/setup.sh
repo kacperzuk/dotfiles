@@ -16,6 +16,7 @@ sudo pacman -Syu --noconfirm --needed \
 sudo chsh -s /usr/bin/fish $USER
 
 if [[ "$1" == "--full" ]]; then
+    sudo pacman -S archlinux-keyring --needed
     sudo pacman -S reflector rsync --noconfirm --needed
     sudo reflector --verbose -l 5 --sort rate --save /etc/pacman.d/mirrorlist
 
