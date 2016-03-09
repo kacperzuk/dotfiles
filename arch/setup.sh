@@ -116,7 +116,7 @@ if [[ "$1" == "--full" ]]; then
         fi
     done
 
-    sed -i "/webkit-theme=/c\\webkit-theme=material" /etc/lightdm/lightdm-webkit2-greeter.conf
+    sudo sed -i "/webkit-theme=/c\\webkit-theme=material" /etc/lightdm/lightdm-webkit2-greeter.conf
 
     sudo cp i3lock@.service /etc/systemd/system/i3lock@.service
     sudo systemctl enable i3lock@$USER
