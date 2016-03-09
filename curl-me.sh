@@ -17,11 +17,15 @@ if [[ -e dotfiles ]]; then
     if [[ -z "$OVERWRITE_DOTFILES" ]]; then
         read -p "~/dotfiles already exists. Should it be removed and cloned again? [Y/n] " OVERWRITE_DOTFILES </dev/tty
     fi
-    if [[ "$OVERWRITE_DOTFILES" != "n" ]]; then
-        rm -rf dotfiles
-        git clone https://bitbucket.org/Kazuldur/dotfiles.git
-    fi
+else
+    OVERWRITE_DOTFILES=y
 fi
+
+if [[ "$OVERWRITE_DOTFILES" != "n" ]]; then
+    rm -rf dotfiles
+    git clone https://bitbucket.org/Kazuldur/dotfiles.git
+fi
+
 cd dotfiles
 
 if [[ -z "$FULL_SETUP" ]]; then
