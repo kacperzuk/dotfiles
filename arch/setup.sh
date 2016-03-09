@@ -88,7 +88,16 @@ if [[ "$1" == "--full" ]]; then
     sudo sed -i "/greeter-session=/c\\greeter-session=lightdm-webkit2-greeter" /etc/lightdm/lightdm.conf
 
 
-    for package in cower pacaur; do
+    for package in \
+        aura-bin \
+        dropbox dropbox-cli \
+        napi-bash \
+        openxenmanager-git \
+        tor-browser-en \
+        lightdm-webkit2-greeter \
+        lightdm-webkit-theme-material-git \
+        octave-communications octave-image octave-signal octave-statistics;
+    do
         if ! hash $package &>/dev/null; then
             DIR=`mktemp -d`
             pushd "$DIR" >/dev/null
@@ -100,15 +109,6 @@ if [[ "$1" == "--full" ]]; then
             rm -rf "$DIR"
         fi
     done
-
-    sudo pacaur -aS --needed \
-        dropbox dropbox-cli \
-        napi-bash \
-        openxenmanager-git \
-        tor-browser-en \
-        lightdm-webkit2-greeter \
-        lightdm-webkit-theme-material-git \
-        octave-communications octave-image octave-signal octave-statistics
 
     sed -i "/webkit-theme=/c\\webkit-theme=material" /etc/lightdm/lightdm-webkit2-greeter.conf
 
