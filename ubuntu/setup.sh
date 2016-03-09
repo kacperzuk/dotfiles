@@ -11,10 +11,7 @@ sudo apt install -y \
     fish \
     git \
     httpie \
-    meld \
     neovim \
-    nodejs npm \
-    sshuttle \
     tmux \
     xterm
 
