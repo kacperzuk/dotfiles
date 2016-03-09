@@ -36,6 +36,7 @@ if [[ "$1" == "--full" ]]; then
         cups \
         cups-pdf \
         dosfstools \
+        feh \
         firefox \
         gimp \
         gnome-keyring \
