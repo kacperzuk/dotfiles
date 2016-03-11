@@ -5,3 +5,4 @@
 5. something for hipchat/slack, web versions suck
 6. something for imap mail (Mutt?), webmails suck. AquaMail for android is
 perfect.
+7. figure out best gpg-agent and ssh-agent setup
