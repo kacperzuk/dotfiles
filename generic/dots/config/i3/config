@@ -160,7 +160,7 @@ bar {
 focus_follows_mouse no
 hide_edge_borders both
 
-bindsym $mod+Shift+Return exec firefox
+bindsym $mod+Shift+Return exec vimb
 
 bindsym $mod+z exec i3lock -d -i /usr/share/archlinux/wallpaper/archlinux-simplyblack.png
 bindsym XF86AudioRaiseVolume exec ponymix increase 5 --max-volume 130
@@ -180,4 +180,4 @@ exec --no-startup-id dropbox start
 exec --no-startup-id xautolock -detectsleep -locker "i3lock -d -i /usr/share/archlinux/wallpaper/archlinux-simplyblack.png"
 
 exec --no-startup-id i3-msg 'workspace 1:Term; exec xterm;'
-exec --no-startup-id i3-msg 'workspace 2:Web; exec firefox; workspace number 1:Term'
+exec --no-startup-id i3-msg 'workspace 2:Web; exec vimb; workspace number 1:Term'
