@@ -181,3 +181,5 @@ exec --no-startup-id xautolock -detectsleep -locker "i3lock -d -i /usr/share/arc
 
 exec --no-startup-id i3-msg 'workspace 1:Term; exec xterm;'
 exec --no-startup-id i3-msg 'workspace 2:Web; exec vimb; workspace number 1:Term'
+
+for_window [class="XTerm"] border pixel 1
