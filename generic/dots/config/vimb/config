@@ -12,7 +12,7 @@ set webinspector=false
 set xssauditor=true
 
 set download-path=~/Pobrane/
-set header=DNT=1,User-Agent
+set header=DNT=1
 set hint-timeout=0
 set hintkeys=asdfglkjh
 set home-page=about:blank
