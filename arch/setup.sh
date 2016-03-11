@@ -102,12 +102,14 @@ if [[ "$1" == "--full" ]]; then
     for package in \
         aura-bin \
         dropbox dropbox-cli \
+        lightdm-webkit-theme-material-git \
+        lightdm-webkit2-greeter \
         napi-bash \
+        octave-control octave-signal octave-communications octave-image octave-io octave-statistics \
         openxenmanager-git \
         tor-browser-en \
-        lightdm-webkit2-greeter \
-        lightdm-webkit-theme-material-git \
-        octave-control octave-signal octave-communications octave-image octave-io octave-statistics
+        vimb-git
+        \
     do
         if ! pacman -Q $package &>/dev/null; then
             DIR=`mktemp -d`
