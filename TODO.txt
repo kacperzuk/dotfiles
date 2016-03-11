@@ -1,0 +1,7 @@
+1. debug nvim startup time
+2. nvim - finally learn using multiple buffers instead of using TMUX for that
+3. vimb <-> zx2c4's password-store integration
+4. vimb <-> i3, containers?
+5. something for hipchat/slack, web versions suck
+6. something for imap mail (Mutt?), webmails suck. AquaMail for android is
+perfect.
