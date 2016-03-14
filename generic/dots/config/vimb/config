@@ -1,9 +1,9 @@
 set accelerated-compositing=true
 set java-applet=false
-set media-playback-requires-user-gesture=true
+set media-playback-requires-user-gesture=false
 set mediasource=true
 set offlinecache=false
-set smooth-scrolling=true
+set smooth-scrolling=false
 set spell-checking
 set spell-checking-languages=pl_PL,en_US
 set webaudio=true

@@ -2,6 +2,6 @@ XTerm*Foreground: Grey
 XTerm*background: #121212
 XTerm*faceName: Literation Mono Powerline
 XTerm*faceNameDoublesize: Droid Sans Japanese
-XTerm*faceSize: 10
+XTerm*faceSize: 9
 XTerm*locale: true
 XTerm*utf8: 1
