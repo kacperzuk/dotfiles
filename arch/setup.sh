@@ -8,6 +8,8 @@ fi
 
 sudo pacman -Syu --noconfirm --needed \
     fish \
+    powerline \
+    python-powerline \
     git \
     neovim \
     httpie \
