@@ -163,14 +163,16 @@ hide_edge_borders both
 
 bindsym $mod+Shift+Return exec vimb
 
-bindsym $mod+z exec i3lock -d -i /usr/share/archlinux/wallpaper/archlinux-simplyblack.png
+bindsym $mod+z exec --no-startup-id i3lock -d -i /usr/share/archlinux/wallpaper/archlinux-simplyblack.png
 bindsym XF86AudioRaiseVolume exec ponymix increase 5 --max-volume 130
 bindsym XF86AudioLowerVolume exec ponymix decrease 5
 bindsym XF86AudioMute exec ponymix toggle
 bindsym XF86MonBrightnessUp exec xbacklight +10
 bindsym XF86MonBrightnessDown exec xbacklight -10
 
-exec --no-startup-id rofi -key-run SuperL+d -font "snap 10" -fg "#505050" -bg "#000000" -hlfg "#ffb964" -hlbg "#000000"
+bindsym $mod+d exec rofi -show run -font "snap 10"
+
+exec --no-startup-id udiskie
 exec --no-startup-id feh --bg-max /usr/share/archlinux/wallpaper/archlinux-simplyblack.png
 exec --no-startup-id xset b off
 exec --no-startup-id transmission-gtk -m

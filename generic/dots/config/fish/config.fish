@@ -18,6 +18,8 @@ end
 set -x ABSROOT /home/kaz/PKGBUILDs
 set -x PATH ~/bin $PATH ~/npm/bin
 set -x EDITOR vim
+set -x SSH_AUTH_SOCK $HOME/.gnupg/S.gpg-agent.ssh
+
 set fish_greeting
 
 alias vim='nvim'

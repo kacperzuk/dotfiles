@@ -5,3 +5,9 @@
 	default = simple
 [color]
 	ui = auto
+[merge]
+	conflictstyle = diff3
+[credential]
+	helper = store
+[alias]
+	tag = tag -s
