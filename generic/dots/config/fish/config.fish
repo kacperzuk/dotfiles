@@ -1,4 +1,4 @@
-source ~/.config/fish/nvm-wrapper/nvm.fish
+source ~/.config/fish/nvm-fish-wrapper/nvm.fish
 
 if status --is-interactive
     if [ -z "$TMUX" ]
