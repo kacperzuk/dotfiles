@@ -8,12 +8,9 @@ fi
 
 sudo pacman -Syu --noconfirm --needed \
     fish \
-    powerline \
-    python-powerline \
     git \
     neovim \
     httpie \
-    meld \
     nodejs npm \
     sshuttle \
     tmux \
@@ -29,7 +26,6 @@ if [[ "$1" == "--full" ]]; then
     sudo pacman -S --noconfirm --needed \
         abs \
         ansible \
-        apvlv \
         archlinux-wallpaper \
         base-devel \
         chromium \
@@ -124,8 +120,6 @@ if [[ "$1" == "--full" ]]; then
             rm -rf "$DIR"
         fi
     done
-
-    sudo sed -i "/webkit-theme=/c\\webkit-theme=material" /etc/lightdm/lightdm-webkit2-greeter.conf
 
     sudo cp i3lock@.service /etc/systemd/system/i3lock@.service
     sudo systemctl enable i3lock@$USER

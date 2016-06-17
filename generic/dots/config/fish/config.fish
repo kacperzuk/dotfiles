@@ -1,4 +1,17 @@
-source ~/.config/fish/nvm-fish-wrapper/nvm.fish
+if test -z "$PATHSET"
+    set -x PATHSET true
+    set -x PATH ~/bin /usr/local/bin $PATH ~/npm/bin
+end
+
+if test -z "$LANG"
+    set -x LANG (grep LANG /etc/locale.conf | sed 's/LANG=//')
+end
+
+if status --is-login
+    if test -z "$DISPLAY" -a "$XDG_VTNR" -eq 1 -a -z "$TMUX"
+        exec startx -- -keeptty
+    end
+end
 
 if status --is-interactive
     if [ -z "$TMUX" ]
@@ -15,11 +28,10 @@ if status --is-interactive
     end
 end
 
+source ~/.config/fish/nvm-fish-wrapper/nvm.fish
+
 set -x ABSROOT /home/kaz/PKGBUILDs
-set -x PATH ~/bin $PATH ~/npm/bin
-set -x EDITOR vim
+set -x EDITOR nvim
 set -x SSH_AUTH_SOCK $HOME/.gnupg/S.gpg-agent.ssh
 
 set fish_greeting
-
-alias vim='nvim'
