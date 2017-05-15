@@ -14,7 +14,7 @@ if status --is-login
 end
 
 if status --is-interactive
-    if [ -z "$TMUX" ]
+    if [ -z "$TMUX" -a "$XDG_VTNR" -ne 2 ]
         tmux start-server
         set SESS_ID (tmux list-sessions ^/dev/null | grep -v "attached" | head -1 | cut -d":" -f1)
         if [ -n "$SESS_ID" ]
@@ -25,9 +25,13 @@ if status --is-interactive
 end
 
 source ~/.config/fish/nvm-fish-wrapper/nvm.fish
+source ~/.config/fish/pass.fish-completion
 
 set -x ABSROOT /home/kaz/PKGBUILDs
 set -x EDITOR nvim
-set -x SSH_AUTH_SOCK $HOME/.gnupg/S.gpg-agent.ssh
+set -x SSH_AUTH_SOCK /run/user/(id -ru)/gnupg/S.gpg-agent.ssh
+
+alias gdb "gdb -q"
 
 set fish_greeting
+

@@ -13,6 +13,8 @@ if !empty(globpath(&rtp, 'autoload/plug.vim'))
     Plug('tpope/vim-fugitive')
     Plug('KabbAmine/zeavim.vim')
     Plug('terryma/vim-multiple-cursors')
+    Plug('elixir-lang/vim-elixir')
+    Plug('lervag/vimtex')
     "Plug('Valloric/YouCompleteMe')
     call plug#end()
 endif

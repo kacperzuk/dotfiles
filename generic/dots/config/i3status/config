@@ -1,7 +1,9 @@
+general {
+    interval = 10
+}
+
 order += "volume pulse"
 order += "disk /"
-order += "disk /home"
-order += "disk /home/kaz/.password-store"
 order += "wireless _first_"
 order += "ethernet _first_"
 order += "battery 0"
@@ -42,11 +44,11 @@ battery 0 {
 }
 
 tztime local {
-        format = "%Y-%m-%d %H:%M:%S"
+        format = "%Y-%m-%d %H:%M"
 }
 
 tztime utc {
-        format = "%H:%M:%S %Z"
+        format = "%H:%M %Z"
         timezone = "UTC"
 }
 
@@ -61,12 +63,3 @@ cpu_temperature 1 {
 disk "/" {
         format = "/ %percentage_free"
 }
-
-disk "/home" {
-        format = "/home %percentage_free"
-}
-
-disk "/home/kaz/.password-store" {
-        format = "pass %percentage_free"
-}
-
