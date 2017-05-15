@@ -71,7 +71,8 @@ if [[ "$1" == "--full" ]]; then
         xorg xorg-drivers xorg-apps xorg-fonts
 
     keys=""
-    keys="$keys 2E1AC68ED40814E0" # tor-browser-en
+    keys="$keys 'BA1E E421 BBB4 5263 180E  1FC7 2E1A C68E D408 14E0'" # tor-browser-en
+    keys="$keys '487E ACC0 8557 AD08 2088  DABA 1EB2 638F F56C 0C53'" # cower
     for key in $keys; do
         gpg --keyserver hkp://pgp.mit.edu --recv-keys $key
     done
