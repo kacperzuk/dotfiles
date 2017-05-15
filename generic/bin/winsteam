@@ -1,0 +1,2 @@
+#!/bin/bash
+WINEPREFIX=/home/kaz/.wine-prefixes/steam wine '/home/kaz/.wine-prefixes/steam/drive_c/Program Files (x86)/Steam/Steam.exe' 

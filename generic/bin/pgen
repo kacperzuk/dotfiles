@@ -1,0 +1,2 @@
+#!/bin/bash
+pwgen -s -c -n -B 50 1

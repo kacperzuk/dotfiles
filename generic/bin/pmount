@@ -1,0 +1,4 @@
+#!/bin/bash
+
+sudo cryptsetup open /home/kaz/vault/passwords password-store --type luks
+sudo mount /dev/mapper/password-store /home/kaz/.password-store
