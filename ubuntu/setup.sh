@@ -8,6 +8,7 @@ sudo apt-add-repository ppa:neovim-ppa/unstable
 sudo apt update
 
 sudo apt install -y \
+    curl \
     fish \
     git \
     httpie \
