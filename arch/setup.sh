@@ -32,8 +32,8 @@ if [[ "$1" == "--full" ]]; then
         cups-pdf \
         dosfstools \
         feh \
-        geary \
         firefox \
+        geary \
         gimp \
         gnome-keyring \
         gparted \
@@ -68,6 +68,7 @@ if [[ "$1" == "--full" ]]; then
         wireshark-cli wireshark-gtk tcpdump \
         xautolock \
         xclip \
+        xinit \
         xorg xorg-drivers xorg-apps xorg-fonts
 
     gpg --keyserver hkp://pgp.mit.edu --recv-keys 'BA1E E421 BBB4 5263 180E  1FC7 2E1A C68E D408 14E0' # tor-browser-en
