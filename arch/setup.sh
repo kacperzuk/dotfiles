@@ -30,6 +30,7 @@ if [[ "$1" == "--full" ]]; then
         cryptsetup \
         cups \
         cups-pdf \
+        dmidecode \
         dosfstools \
         feh \
         firefox \
@@ -92,5 +93,10 @@ if [[ "$1" == "--full" ]]; then
     done
 
     nvim +PlugInstall +qall
+
+    if [[ $(dmidecode -s system-product-name) = "Virtualbox" ]]; then
+        sudo pacman -S --noconfirm virtualbox-guest-{utils,modules-arch}
+        sudo modprobe vboxvideo vboxguest vboxsf
+    fi
     echo Run \"startx\" to begin.
 fi
