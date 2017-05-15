@@ -187,6 +187,7 @@ exec geary
 exec chromium
 
 for_window [class="XTerm"] border pixel 1
+for_window [class="VirtualBox"] floating enable
 
 assign [class="XTerm"] → 1:Term
 assign [class="Chromium"] → 2:Web
