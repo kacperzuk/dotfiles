@@ -95,7 +95,7 @@ if [[ "$1" == "--full" ]]; then
     nvim +PlugInstall +qall
 
     if [[ $(sudo dmidecode -s system-product-name) = "VirtualBox" ]]; then
-        sudo pacman -S --noconfirm virtualbox-guest-{utils,modules-arch}
+        sudo pacman -S --noconfirm virtualbox-guest-{utils,modules-arch} --needed
         sudo modprobe vboxvideo vboxguest vboxsf
     fi
     echo Run \"startx\" to begin.
