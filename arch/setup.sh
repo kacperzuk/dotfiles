@@ -85,7 +85,7 @@ if [[ "$1" == "--full" ]]; then
         if ! pacman -Q $package &>/dev/null; then
             DIR=`mktemp -d`
             pushd "$DIR" >/dev/null
-            wget https://aur.archlinux.org/cgit/aur.git/snapshot/${package}.tar.gz
+            curl -LO https://aur.archlinux.org/cgit/aur.git/snapshot/${package}.tar.gz
             tar xf ${package}.tar.gz
             cd $package
             makepkg -si --noconfirm
