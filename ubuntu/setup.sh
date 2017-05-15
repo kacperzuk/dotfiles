@@ -27,5 +27,6 @@ xrdb ~/.Xresources
 
 tmux new -d nethack
 xterm -e 'echo "Close this term after installation finishes" | nvim - +PlugInstall'
-bash -c "bash -c 'xterm fish &'"
+bash -c "bash -c 'xterm fish &' &" &
+sleep 1
 killall gnome-terminal-server
