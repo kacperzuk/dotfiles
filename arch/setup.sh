@@ -10,7 +10,6 @@ sudo pacman -Syu --noconfirm --needed \
     fish \
     git \
     neovim \
-    httpie \
     nodejs npm \
     sshuttle \
     tmux \
