@@ -24,8 +24,6 @@ if [[ "$1" == "--full" ]]; then
     sudo reflector --verbose -l 5 --sort rate --save /etc/pacman.d/mirrorlist
 
     sudo pacman -S --noconfirm --needed \
-        abs \
-        ansible \
         archlinux-wallpaper \
         base-devel \
         chromium \
@@ -35,6 +33,7 @@ if [[ "$1" == "--full" ]]; then
         cups-pdf \
         dosfstools \
         feh \
+        geary \
         firefox \
         gimp \
         gnome-keyring \
@@ -43,53 +42,34 @@ if [[ "$1" == "--full" ]]; then
         haveged \
         hplip \
         i3-wm \
-        i3lock \
         i3status \
-        inkscape \
         intel-ucode \
         iotop \
         iw \
-        jq \
         l3afpad \
         libreoffice-fresh libreoffice-fresh-pl \
-        lightdm \
         logrotate \
-        mariadb \
-        mongodb mongodb-tools \
         ncdu \
         nethack \
-        networkmanager nm-connection-editor networkmanager-openvpn network-manager-applet \
+        networkmanager nm-connection-editor network-manager-applet \
         nmap \
         ntfs-3g \
-        octave \
         openbsd-netcat \
         openssh \
         owncloud-client \
-        pam_mount \
         pass \
-        php php-apache php-composer php-gd php-mcrypt php-memcached php-mongodb php-pgsql php-sqlite \
-        postfix \
-        postgresql \
         pulseaudio-bluetooth \
         pv \
-        python2-scikit-learn \
         redshift \
         rofi \
         simple-scan \
         smplayer \
-        tor torsocks \
-        transmission-gtk \
         virtualbox virtualbox-host-dkms virtualbox-guest-iso \
-        vlc \
         whois \
         wireshark-cli wireshark-gtk tcpdump \
         xautolock \
         xclip \
         xorg xorg-drivers xorg-apps xorg-fonts
-
-    sudo systemctl enable lightdm
-    sudo sed -i "/greeter-session=/c\\greeter-session=lightdm-webkit2-greeter" /etc/lightdm/lightdm.conf
-
 
     keys=""
     keys="$keys 2E1AC68ED40814E0" # tor-browser-en
@@ -98,16 +78,10 @@ if [[ "$1" == "--full" ]]; then
     done
 
     for package in \
-        aura-bin \
+        cower \
         dropbox dropbox-cli \
-        lightdm-webkit-theme-material-git \
-        lightdm-webkit2-greeter \
-        napi-bash \
-        octave-control octave-signal octave-communications octave-image octave-io octave-statistics \
-        openxenmanager-git \
         tor-browser-en \
-        vimb-git
-        \
+        xsecurelock-git
     do
         if ! pacman -Q $package &>/dev/null; then
             DIR=`mktemp -d`
@@ -121,9 +95,6 @@ if [[ "$1" == "--full" ]]; then
         fi
     done
 
-    sudo cp i3lock@.service /etc/systemd/system/i3lock@.service
-    sudo systemctl enable i3lock@$USER
-
     nvim +PlugInstall +qall
-    echo Run \"sudo systemctl start lightdm\" to begin.
+    echo Run \"startx\" to begin.
 fi

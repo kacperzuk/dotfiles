@@ -2,14 +2,10 @@
 
 set -e
 
-echo "deb http://debian.sur5r.net/i3 trusty universe" >> /etc/apt/sources.list
-
 sudo apt-add-repository multiverse
 sudo apt-add-repository universe
 sudo apt-add-repository ppa:neovim-ppa/unstable
 sudo apt update
-sudo apt install -y sur5r-keyring
-sudo apt install -y i3 i3status
 
 sudo apt install -y \
     fish \
