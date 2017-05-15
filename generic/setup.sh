@@ -17,6 +17,8 @@ for file in $(find . -type f | sed "s|^\./||"); do
     ln -s "$(pwd)/$file" "$HOME/.$file"
 done
 
+chmod go-rwx ~/.gnupg
+
 popd >/dev/null
 
 if [[ ! -e "$HOME/.config/fish/nvm-fish-wrapper" ]]; then
