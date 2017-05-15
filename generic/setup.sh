@@ -21,6 +21,12 @@ chmod go-rwx ~/.gnupg
 
 popd >/dev/null
 
+if [ -e "$HOME/bin" -o -L "$HOME/bin" ]; then
+    echo "Moving old ~/bin to ~/bin_old"
+    rm -rf $HOME/bin_old
+    mv "$HOME/bin" "$HOME/bin_old"
+fi
+
 ln -s bin ~/
 
 if [[ ! -e "$HOME/.config/fish/nvm-fish-wrapper" ]]; then
