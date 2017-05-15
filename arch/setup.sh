@@ -68,8 +68,7 @@ if [[ "$1" == "--full" ]]; then
         wireshark-cli wireshark-gtk tcpdump \
         xautolock \
         xclip \
-        xinit \
-        xorg xorg-drivers xorg-apps xorg-fonts
+        xorg xorg-drivers xorg-apps xorg-fonts xorg-xinit
 
     gpg --keyserver hkp://pgp.mit.edu --recv-keys 'BA1E E421 BBB4 5263 180E  1FC7 2E1A C68E D408 14E0' # tor-browser-en
     gpg --keyserver hkp://pgp.mit.edu --recv-keys '487E ACC0 8557 AD08 2088  DABA 1EB2 638F F56C 0C53' # cower
