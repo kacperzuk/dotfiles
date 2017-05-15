@@ -94,7 +94,7 @@ if [[ "$1" == "--full" ]]; then
 
     nvim +PlugInstall +qall
 
-    if [[ $(dmidecode -s system-product-name) = "Virtualbox" ]]; then
+    if [[ $(sudo dmidecode -s system-product-name) = "Virtualbox" ]]; then
         sudo pacman -S --noconfirm virtualbox-guest-{utils,modules-arch}
         sudo modprobe vboxvideo vboxguest vboxsf
     fi
