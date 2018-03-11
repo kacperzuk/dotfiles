@@ -3,7 +3,6 @@ general {
 }
 
 
-order += "external_script"
 order += "volume pulse"
 order += "wireless _first_"
 order += "ethernet _first_"
@@ -59,8 +58,4 @@ load {
 
 cpu_temperature 1 {
         format = "T: %degrees °C"
-}
-
-external_script {
-    script_path = "/home/kaz/bin/pest.py"
 }
