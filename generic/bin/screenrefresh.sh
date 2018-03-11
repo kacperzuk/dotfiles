@@ -1,3 +1,3 @@
 #!/bin/bash
 
-xrandr --output LVDS1 --auto --output HDMI1 --auto --right-of LVDS1 --output VGA1 --auto --right-of LVDS1
+xrandr --output eDP1 --auto --output HDMI1 --auto --right-of eDP1 --output DP1 --auto --right-of eDP1
