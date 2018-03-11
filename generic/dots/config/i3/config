@@ -149,7 +149,7 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-    status_command i3status
+    status_command py3status
     font pango:DejaVu Sans Mono, Icons 7
 }
 
@@ -158,15 +158,15 @@ bar {
 focus_follows_mouse no
 hide_edge_borders both
 
-bindsym $mod+Shift+Return exec chromium
+bindsym $mod+Shift+Return exec firefox-developer-edition
 bindsym $mod+Return exec xterm
 bindsym $mod+z exec --no-startup-id xsecurelock
 bindsym $mod+x exec --no-startup-id /home/kaz/bin/screenrefresh.sh
 bindsym $mod+c exec --no-startup-id /home/kaz/bin/d100connect.sh
 bindsym $mod+d exec rofi -show run -font "snap 10"
 
-bindsym XF86AudioRaiseVolume exec ponymix increase 5 --max-volume 150
-bindsym XF86AudioLowerVolume exec ponymix decrease 5
+bindsym XF86AudioRaiseVolume exec ponymix increase 2 --max-volume 150
+bindsym XF86AudioLowerVolume exec ponymix decrease 2
 bindsym XF86AudioMute exec ponymix toggle
 bindsym XF86MonBrightnessUp exec xbacklight +10
 bindsym XF86MonBrightnessDown exec xbacklight -10
@@ -183,13 +183,14 @@ exec --no-startup-id i3-msg workspace 1:Term
 
 exec xterm
 exec geary
-exec chromium
+exec firefox-developer-edition
+exec synergy-service
 
 for_window [class="XTerm"] border pixel 1
 for_window [class="VirtualBox"] floating enable
 
 assign [class="XTerm"] → 1:Term
-assign [class="Chromium"] → 2:Web
+assign [class="Firefox"] → 2:Web
 assign [class="Geary"] → 3:Mail
 assign [class="Steam"] → 4
 assign [class="smplayer"] → 9
