@@ -4,7 +4,7 @@ set -e
 
 sudo apt-add-repository multiverse
 sudo apt-add-repository universe
-sudo apt-add-repository ppa:neovim-ppa/unstable
+sudo apt-add-repository ppa:neovim-ppa/stable
 sudo apt update
 
 sudo apt install -y \
