@@ -37,3 +37,5 @@ if [[ ! -e "$HOME/.local/share/fonts/Literation Mono Powerline.ttf" ]]; then
     curl -L https://github.com/powerline/fonts/raw/master/LiberationMono/Literation%20Mono%20Powerline.ttf -o "$HOME/.local/share/fonts/Literation Mono Powerline.ttf"
     fc-cache -f "$HOME/.local/share/fonts/" &>/dev/null || true
 fi
+
+curl -fsSL https://git.zx2c4.com/password-store/plain/src/completion/pass.fish-completion > "$HOME/.config/fish/pass.fish-completion"
