@@ -27,7 +27,7 @@ if [ -e "$HOME/bin" -o -L "$HOME/bin" ]; then
     mv "$HOME/bin" "$HOME/bin_old"
 fi
 
-ln -s bin ~/
+ln -s "$(pwd)/bin" "$HOME/bin"
 
 if [[ ! -e "$HOME/.config/fish/nvm-fish-wrapper" ]]; then
     git clone git://github.com/passcod/nvm-fish-wrapper.git "$HOME/.config/fish/nvm-fish-wrapper"

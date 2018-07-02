@@ -23,10 +23,13 @@ sudo update-alternatives --install /usr/bin/editor editor /usr/bin/nvim 60
 
 sudo chsh -s /usr/bin/fish $USER
 
-xrdb ~/.Xresources
-
-tmux new -d nethack
-xterm -e 'echo "Close this term after installation finishes" | nvim - +PlugInstall'
-bash -c "bash -c 'xterm fish &' &" &
-sleep 1
-killall gnome-terminal-server
+if [[ "$1" == "--full" ]]; then
+    xrdb ~/.Xresources
+    tmux new -d nethack
+    xterm -e 'echo "Close this term after installation finishes" | nvim - +PlugInstall'
+    bash -c "bash -c 'xterm fish &' &" &
+    sleep 1
+    killall gnome-terminal-server
+else
+    nvim - +PlugInstall
+fi
