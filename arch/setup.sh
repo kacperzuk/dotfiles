@@ -2,6 +2,20 @@
 
 set -e
 
+function install_aur_package {
+    package=$1
+    if ! pacman -Q $package &>/dev/null; then
+        DIR=`mktemp -d`
+        pushd "$DIR" >/dev/null
+        curl -LO https://aur.archlinux.org/cgit/aur.git/snapshot/${package}.tar.gz
+        tar xf ${package}.tar.gz
+        cd $package
+        makepkg -si --noconfirm
+        popd
+        rm -rf "$DIR"
+    fi
+}
+
 if [[ -n "$(dirname $0)" ]]; then
     cd "$(dirname $0)"
 fi
@@ -13,12 +27,16 @@ sudo pacman -Syu --noconfirm --needed \
     nodejs npm \
     sshuttle \
     tmux \
+    colordiff \
+    ncdu \
+    archlinux-keyring \
     xterm
 
 sudo chsh -s /usr/bin/fish $USER
+install_aur_package $package
+nvim +PlugInstall +qall
 
 if [[ "$1" == "--full" ]]; then
-    sudo pacman -S archlinux-keyring --needed
     sudo pacman -S reflector rsync --noconfirm --needed
     sudo reflector --verbose -l 5 --sort rate --save /etc/pacman.d/mirrorlist
 
@@ -26,7 +44,6 @@ if [[ "$1" == "--full" ]]; then
         archlinux-wallpaper \
         base-devel \
         chromium \
-        colordiff \
         cryptsetup \
         cups \
         cups-pdf \
@@ -49,7 +66,6 @@ if [[ "$1" == "--full" ]]; then
         l3afpad \
         libreoffice-fresh libreoffice-fresh-pl \
         logrotate \
-        ncdu \
         nethack \
         networkmanager nm-connection-editor network-manager-applet \
         nmap \
@@ -75,24 +91,12 @@ if [[ "$1" == "--full" ]]; then
     gpg --keyserver hkp://pgp.mit.edu --recv-keys '487E ACC0 8557 AD08 2088  DABA 1EB2 638F F56C 0C53' # cower
 
     for package in \
-        cower \
         dropbox dropbox-cli \
         tor-browser-en \
         xsecurelock-git
     do
-        if ! pacman -Q $package &>/dev/null; then
-            DIR=`mktemp -d`
-            pushd "$DIR" >/dev/null
-            curl -LO https://aur.archlinux.org/cgit/aur.git/snapshot/${package}.tar.gz
-            tar xf ${package}.tar.gz
-            cd $package
-            makepkg -si --noconfirm
-            popd
-            rm -rf "$DIR"
-        fi
+        install_aur_package $package
     done
-
-    nvim +PlugInstall +qall
 
     if [[ $(sudo dmidecode -s system-product-name) = "VirtualBox" ]]; then
         sudo pacman -S --noconfirm virtualbox-guest-{utils,modules-arch} --needed
