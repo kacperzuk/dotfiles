@@ -9,12 +9,12 @@ end
 
 if status --is-login
     if test -z "$DISPLAY" -a "$XDG_VTNR" -eq 1 -a -z "$TMUX"
-        exec startx -- -keeptty
+        exec sway
     end
 end
 
 if status --is-interactive
-    if [ -z "$TMUX" -a "$XDG_VTNR" -ne 2 ]
+    if [ -z "$TMUX" -a -n "$XDG_VTNR" -a "$XDG_VTNR" -ne 2 ]
         tmux start-server
         set SESS_ID (tmux list-sessions ^/dev/null | grep -v "attached" | head -1 | cut -d":" -f1)
         if [ -n "$SESS_ID" ]
@@ -34,4 +34,4 @@ set -x SSH_AUTH_SOCK /run/user/(id -ru)/gnupg/S.gpg-agent.ssh
 alias gdb "gdb -q"
 
 set fish_greeting
-
+alias vim nvim

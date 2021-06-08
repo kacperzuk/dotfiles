@@ -15,6 +15,7 @@ if !empty(globpath(&rtp, 'autoload/plug.vim'))
     Plug('terryma/vim-multiple-cursors')
     Plug('elixir-lang/vim-elixir')
     Plug('lervag/vimtex')
+    Plug('w0rp/ale')
     "Plug('Valloric/YouCompleteMe')
     call plug#end()
 endif
@@ -35,9 +36,9 @@ endif
 
 autocmd BufNewFile,BufRead *.pde setlocal ft=arduino
 autocmd BufNewFile,BufRead *.ino setlocal ft=arduino
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 set smarttab
 set expandtab
 set relativenumber
@@ -70,3 +71,4 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=233
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=235
 
 nnoremap <Leader>zz :let &scrolloff=9999-&scrolloff<CR>
+let b:ale_fixers = {'python': ['add_blank_lines_for_python_control_statements', 'isort', 'remove_trailing_lines', 'trim_whitespace', 'yapf']}

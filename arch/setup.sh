@@ -46,6 +46,7 @@ if [[ "$1" == "--full" ]]; then
         chromium \
         cryptsetup \
         cups \
+        wireguard-{dkms,tools} \
         cups-pdf \
         dmidecode \
         dosfstools \
