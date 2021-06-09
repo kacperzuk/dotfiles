@@ -168,8 +168,8 @@ bindsym $mod+d exec rofi -show run -font "snap 10"
 bindsym XF86AudioRaiseVolume exec ponymix increase 2 --max-volume 150
 bindsym XF86AudioLowerVolume exec ponymix decrease 2
 bindsym XF86AudioMute exec ponymix toggle
-bindsym XF86MonBrightnessUp exec xbacklight +10
-bindsym XF86MonBrightnessDown exec xbacklight -10
+bindsym XF86MonBrightnessUp exec light -A 10
+bindsym XF86MonBrightnessDown exec light -U 10
 
 exec --no-startup-id udiskie
 exec --no-startup-id feh --bg-max /usr/share/archlinux/wallpaper/archlinux-simplyblack.png

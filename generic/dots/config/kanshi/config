@@ -1,0 +1,19 @@
+profile half_displaylink {
+	output eDP-1 disable
+	output DVI-I-1 enable
+}
+
+profile full_displaylink {
+	output eDP-1 disable 
+	output "Samsung Electric Company LC27G7xT H4ZNA00498" enable
+	output "Goldstar Company Ltd LG Ultra HD 0x00009185" enable position 2560,0 scale 1.5 transform 270
+  exec swaymsg 'workspace 1:Term, move workspace to "Samsung Electric Company LC27G7xT H4ZNA00498"'
+  exec swaymsg 'workspace 2:Web, move workspace to "Samsung Electric Company LC27G7xT H4ZNA00498"'
+  exec swaymsg 'workspace 3:Mail, move workspace to "Goldstar Company Ltd LG Ultra HD 0x00009185"'
+  exec swaymsg 'workspace 4:Discord, move workspace to "Goldstar Company Ltd LG Ultra HD 0x00009185"'
+  exec swaymsg 'workspace 5:Signal, move workspace to "Goldstar Company Ltd LG Ultra HD 0x00009185"'
+}
+
+profile laptop {
+	output eDP-1 enable mode 1920x1080 position 0,0 scale 1
+}

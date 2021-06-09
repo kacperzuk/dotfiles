@@ -3,15 +3,20 @@ general {
 }
 
 
+order += "arch_updates"
 order += "volume pulse"
 order += "wireless _first_"
-order += "ethernet enp2s0"
-order += "ethernet wg0"
-order += "battery 0"
+order += "net_iplist"
+order += "battery_level"
 order += "cpu_temperature 1"
 order += "load"
 order += "tztime local"
 order += "tztime utc"
+
+arch_updates {
+  format = "{pacman}"
+  hide_if_zero = True
+}
 
 volume pulse {
     format = "♪: %volume"
@@ -22,32 +27,20 @@ volume pulse {
 }
 
 wireless _first_ {
-        format_up = "W: (%essid) %ip"
+        format_up = "W: (%essid)"
         format_down = "W: down"
 }
 
-ethernet enp2s0 {
-        # if you use %speed, i3status requires the cap_net_admin capability
-        format_up = "E: %ip"
-        format_down = "E: down"
+net_iplist {
+        iface_sep = ', '
 }
 
-ethernet wg0 {
-        # if you use %speed, i3status requires the cap_net_admin capability
-        format_up = "wg0: %ip"
-        format_down = "wg0: down"
-}
-
-battery 0 {
-        format = "%status %percentage %remaining"
-        format_down = "No battery"
-        status_chr = "⚇ CHR"
-        status_bat = "⚡ BAT"
-        status_full = "☻ FULL"
-        path = "/sys/class/power_supply/BAT%d/uevent"
-        low_threshold = 10
-        integer_battery_capacity = true
-        last_full_capacity = true
+battery_level {
+        format = "{icon} {percent}%"
+        threshold_bad = 10
+        threshold_degraded = 30
+        threshold_full = 95
+        notify_low_level = True
 }
 
 tztime local {
