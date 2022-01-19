@@ -27,7 +27,7 @@ cd $HOME
 
 if [[ "$OVERWRITE_DOTFILES" != "n" ]]; then
     rm -rf dotfiles
-    git clone -q https://bitbucket.org/kacperbzuk/dotfiles.git
+    git clone -q https://github.com/kacperzuk/dotfiles.git
 fi
 
 cd dotfiles
