@@ -71,4 +71,34 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=233
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=235
 
 nnoremap <Leader>zz :let &scrolloff=9999-&scrolloff<CR>
-let b:ale_fixers = {'python': ['add_blank_lines_for_python_control_statements', 'isort', 'remove_trailing_lines', 'trim_whitespace', 'yapf']}
+let b:ale_linters = {
+\  'javascript': ['standard'],
+\  'c': ['clangd']
+\}
+
+let b:ale_fixers = {
+\   'python': [
+\     'add_blank_lines_for_python_control_statements',
+\     'isort',
+\     'remove_trailing_lines',
+\     'trim_whitespace',
+\     'yapf'
+\   ],
+\   'javascript': [
+\     'standard',
+\   ],
+\   'c': [
+\     'remove_trailing_lines',
+\     'trim_whitespace',
+\     'clang-format'
+\   ],
+\   'cuda': [
+\     'remove_trailing_lines',
+\     'trim_whitespace',
+\     'clang-format'
+\   ]
+\ }
+let g:ale_c_parse_compile_commands = 1
+let g:ale_fix_on_save = 1
+let g:ale_c_build_dir_names = ['bin', 'build', 'builddir']
+let g:ale_cuda_clangd_options = '--cuda-path /opt/cuda'

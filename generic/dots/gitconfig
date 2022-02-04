@@ -1,5 +1,5 @@
 [user]
-	email = kacper.b.zuk@gmail.com
+	email = github@kacperzuk.pl
 	name = Kacper Żuk
 [push]
 	default = simple
@@ -26,3 +26,5 @@
 	required = true
 [pull]
 	rebase = false
+[init]
+	defaultBranch = main

@@ -142,7 +142,7 @@ input * {
     # We just use 1-10 as the default.
     bindsym $mod+Ctrl+$right move workspace to output right
     bindsym $mod+Ctrl+$left move workspace to output left
-    
+
 #
 # Layout stuff:
 #
@@ -230,6 +230,7 @@ focus_follows_mouse no
 hide_edge_borders both
 font pango:monospace 8
 bindsym $mod+Shift+Return exec firefox-developer-edition
+bindsym $mod+Shift+s exec 'grim -g "$(slurp)" - | swappy -f -'
 bindsym $mod+z exec --no-startup-id 'swaylock -f -F -k -l -c 000000'
 bindsym XF86AudioRaiseVolume exec ponymix increase 2 --max-volume 150
 bindsym XF86AudioLowerVolume exec ponymix decrease 2
@@ -240,7 +241,7 @@ bindsym XF86MonBrightnessDown exec light -U 10
 exec --no-startup-id nm-applet
 exec --no-startup-id nextcloud
 exec --no-startup-id wl-paste -t text --watch clipman store
-exec --no-startup-id mako
+exec --no-startup-id mako --default-timeout=10000
 exec --no-startup-id kanshi
 exec $term
 exec geary

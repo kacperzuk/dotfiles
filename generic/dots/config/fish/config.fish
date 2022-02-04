@@ -1,6 +1,6 @@
 if test -z "$PATHSET"
     set -x PATHSET true
-    set -x PATH ~/bin /usr/local/bin $PATH ~/npm/bin
+    set -x PATH ~/bin /usr/local/bin $PATH ~/npm/bin ~/.local/bin
 end
 
 if test -z "$LANG"
@@ -16,7 +16,7 @@ end
 if status --is-interactive
     if [ -z "$TMUX" -a -n "$XDG_VTNR" -a "$XDG_VTNR" -ne 2 ]
         tmux start-server
-        set SESS_ID (tmux list-sessions ^/dev/null | grep -v "attached" | head -1 | cut -d":" -f1)
+        set SESS_ID (tmux list-sessions 2>/dev/null | grep -v "attached" | head -1 | cut -d":" -f1)
         if [ -n "$SESS_ID" ]
             exec tmux -2 -u attach-session -t $SESS_ID
         end
@@ -24,8 +24,15 @@ if status --is-interactive
     end
 end
 
-source ~/.config/fish/nvm-fish-wrapper/nvm.fish
 source ~/.config/fish/pass.fish-completion
+
+set REALSWAY /run/user/(id -u)/sway-ipc.(id -u).*.sock
+set -x SWAYSOCK /run/user/(id -u)/sway-ipc.sock
+set -x I3SOCK "$SWAYSOCK"
+if [ (realpath "$SWAYSOCK") != "$REALSWAY" ]
+  rm -f "$SWAYSOCK"
+  ln -s "$REALSWAY" "$SWAYSOCK"
+end
 
 set -x ABSROOT /home/kaz/PKGBUILDs
 set -x EDITOR nvim
